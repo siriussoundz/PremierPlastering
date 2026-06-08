@@ -714,7 +714,7 @@
 
     @media (max-width: 600px) {
       body {
-        padding-bottom: 74px;
+        padding-bottom: 58px;
       }
 
       .topbar {
@@ -731,8 +731,8 @@
       }
 
       .nav-actions .btn {
-        min-height: 38px;
-        padding: 9px 10px;
+        min-height: 36px;
+        padding: 8px 10px;
         font-size: 9px;
       }
 
@@ -776,7 +776,8 @@
       }
 
       .hero-ctas .btn {
-        flex: 1 1 145px;
+        flex: 1 1 132px;
+        min-height: 44px;
       }
 
       .hero-art {
@@ -893,27 +894,38 @@
 
       .mobile-bottom-cta {
         position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
         z-index: 40;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1px;
-        padding: 8px;
-        background: rgba(7,7,6,.94);
-        border-top: 1px solid rgba(213,178,112,.28);
+        gap: 8px;
+        padding: 6px;
+        background: rgba(7,7,6,.88);
+        border: 1px solid rgba(213,178,112,.24);
         backdrop-filter: blur(14px);
+        transform: translateY(120%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform .25s ease, opacity .25s ease;
+        box-shadow: 0 12px 36px rgba(0,0,0,.38);
+      }
+
+      .mobile-bottom-cta.visible {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
       }
 
       .mobile-bottom-cta a {
-        min-height: 48px;
+        min-height: 42px;
         display: grid;
         place-items: center;
         text-transform: uppercase;
         font-weight: 900;
-        font-size: 11px;
-        letter-spacing: .12em;
+        font-size: 10px;
+        letter-spacing: .11em;
         border: 1px solid rgba(255,255,255,.18);
       }
 
@@ -1150,10 +1162,21 @@
         menuBtn.setAttribute('aria-expanded', 'false');
       });
     });
+
+    const mobileCta = document.getElementById('mobileCta');
+    const updateMobileCta = () => {
+      if (!mobileCta) return;
+      const shouldShow = window.innerWidth <= 600 && window.scrollY > 520;
+      mobileCta.classList.toggle('visible', shouldShow);
+    };
+
+    window.addEventListener('scroll', updateMobileCta, { passive: true });
+    window.addEventListener('resize', updateMobileCta);
+    updateMobileCta();
   </script>
-  <div class="mobile-bottom-cta" aria-label="Quick contact actions">
-    <a href="#quote">Get Quote</a>
-    <a href="#quote">Contact</a>
+  <div class="mobile-bottom-cta" id="mobileCta" aria-label="Quick contact actions">
+    <a href="#quote">Free Quote</a>
+    <a href="#quote">Call / Email</a>
   </div>
 
 </body>
