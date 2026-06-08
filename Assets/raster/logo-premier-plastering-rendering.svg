@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-labelledby="title desc">
+  <title id="title">Premier Plastering &amp; Rendering logo</title>
+  <desc id="desc">Horizontal logo with trowel icon and Premier Plastering and Rendering text.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M44 112 C70 40 142 28 190 72" stroke="#B88A3A" stroke-width="7"/>
+    <path d="M78 58 h78 c15 0 26 11 26 25 v42 c0 15-11 26-26 26 H78 c-15 0-26-11-26-26 V83 c0-14 12-25 26-25z" fill="#111111" stroke="#FFFFFF" stroke-width="7"/>
+    <path d="M122 83 v48" stroke="#B88A3A" stroke-width="12"/>
+    <path d="M111 132 h56" stroke="#B88A3A" stroke-width="12"/>
+    <path d="M142 125 l93-47 22 19-86 63z" fill="#FFFFFF" stroke="#111111" stroke-width="7"/>
+    <path d="M174 111 l35 31" stroke="#B88A3A" stroke-width="8"/>
+  </g>
+  <text x="300" y="98" font-family="Arial Black, Impact, Arial, sans-serif" font-size="74" letter-spacing="8" fill="#111111">PREMIER</text>
+  <path d="M304 122 H860" stroke="#B88A3A" stroke-width="4" opacity="0.85"/>
+  <text x="304" y="172" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="14" fill="#B88A3A">PLASTERING &amp; RENDERING</text>
+</svg>
