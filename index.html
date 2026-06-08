@@ -557,6 +557,399 @@
       .footer-grid { flex-direction: column; }
       .contact-lines { display: grid; gap: 8px; }
     }
+
+    /* ---- V4 POLISH PASS: stronger mobile-first finish ---- */
+    .brand img {
+      max-height: 58px;
+      object-fit: contain;
+    }
+
+    .topbar {
+      box-shadow: 0 8px 28px rgba(0,0,0,.24);
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.15), rgba(0,0,0,.56)),
+        url("Assets/raster/bg-dark-plaster-texture.jpg") center/cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-content::before {
+      content: "";
+      position: absolute;
+      inset: -42px -46px;
+      z-index: -1;
+      background: radial-gradient(circle at 50% 50%, rgba(0,0,0,.55), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-art .worker {
+      max-height: 620px;
+      object-fit: contain;
+    }
+
+    .trust-strip {
+      box-shadow: 0 -12px 34px rgba(0,0,0,.18) inset;
+    }
+
+    .services {
+      padding-top: 76px;
+    }
+
+    .service-card,
+    .about-card,
+    .quote-box {
+      border-color: rgba(213,178,112,.22);
+    }
+
+    .showcase {
+      padding-top: 76px;
+      padding-bottom: 76px;
+    }
+
+    .quote {
+      padding-top: 76px;
+      padding-bottom: 76px;
+    }
+
+    .mobile-bottom-cta {
+      display: none;
+    }
+
+    @media (max-width: 930px) {
+      body {
+        background-attachment: scroll;
+      }
+
+      .nav {
+        height: 72px;
+      }
+
+      .brand img {
+        width: 160px;
+        max-height: 54px;
+      }
+
+      .nav-actions {
+        gap: 8px;
+      }
+
+      .nav-actions .btn {
+        display: inline-flex;
+        min-height: 40px;
+        padding: 10px 13px;
+        font-size: 10px;
+        letter-spacing: .1em;
+      }
+
+      .menu-btn {
+        min-height: 40px;
+        padding: 9px 11px;
+      }
+
+      .navlinks {
+        top: 72px;
+      }
+
+      .hero-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 34px 0 20px;
+      }
+
+      .hero-content {
+        order: 1;
+        max-width: 640px;
+      }
+
+      .hero-art {
+        order: 2;
+        min-height: 300px;
+        margin-top: 2px;
+        place-items: center start;
+      }
+
+      .hero-art .brush {
+        width: min(480px, 92%);
+        transform: rotate(-3deg) translate(10px, 14px);
+        opacity: .72;
+      }
+
+      .hero-art .worker {
+        width: min(330px, 68vw);
+        max-height: 360px;
+        margin-left: 4px;
+      }
+
+      .hero-copy {
+        max-width: 620px;
+      }
+
+      .trust-card {
+        min-height: 118px;
+      }
+
+      .showcase .section-head {
+        margin-bottom: 24px;
+      }
+
+      .split {
+        gap: 22px;
+      }
+
+      #about .feature-image {
+        order: -1;
+      }
+
+      .quote-box {
+        gap: 22px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding-bottom: 74px;
+      }
+
+      .topbar {
+        position: sticky;
+      }
+
+      .nav {
+        height: 66px;
+      }
+
+      .brand img {
+        width: 132px;
+        max-height: 46px;
+      }
+
+      .nav-actions .btn {
+        min-height: 38px;
+        padding: 9px 10px;
+        font-size: 9px;
+      }
+
+      .menu-btn {
+        min-height: 38px;
+        padding: 8px 10px;
+        font-size: 10px;
+      }
+
+      .navlinks {
+        top: 66px;
+      }
+
+      .hero {
+        border-bottom: 0;
+      }
+
+      .hero-grid {
+        padding-top: 24px;
+      }
+
+      .hero-content::before {
+        inset: -24px -14px;
+      }
+
+      .eyebrow {
+        color: var(--gold-light);
+        letter-spacing: .18em;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+
+      .hero-title span {
+        max-width: 340px;
+      }
+
+      .hero-copy {
+        max-width: 350px;
+      }
+
+      .hero-ctas .btn {
+        flex: 1 1 145px;
+      }
+
+      .hero-art {
+        min-height: 235px;
+        margin-top: 4px;
+      }
+
+      .hero-art .brush {
+        width: 300px;
+        transform: rotate(-3deg) translate(6px, 18px);
+      }
+
+      .hero-art .worker {
+        width: 230px;
+        max-height: 250px;
+      }
+
+      .trust-strip {
+        background: #f4efe5;
+      }
+
+      .trust-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: rgba(0,0,0,.08);
+      }
+
+      .trust-card {
+        border: 0;
+        background: #f7f2e8;
+        min-height: 128px;
+        padding: 18px 10px;
+      }
+
+      .trust-card img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .trust-card strong {
+        font-size: 11px;
+        letter-spacing: .08em;
+      }
+
+      .trust-card p {
+        font-size: 12px;
+      }
+
+      .services {
+        padding-top: 48px;
+      }
+
+      .service-card img {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 16px;
+      }
+
+      .service-card h3 {
+        font-size: 14px;
+      }
+
+      .service-card p,
+      .section-head p,
+      .about-card p,
+      .ticks li,
+      .quote-box p {
+        font-size: 14px;
+      }
+
+      .showcase {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+
+      .work-grid,
+      .work-stack {
+        gap: 12px;
+      }
+
+      .work-card {
+        min-height: 220px;
+      }
+
+      .work-card.small {
+        min-height: 170px;
+      }
+
+      #about {
+        padding-top: 48px;
+      }
+
+      .feature-image img {
+        height: 230px;
+      }
+
+      .about-card h2 {
+        letter-spacing: .055em;
+      }
+
+      .quote {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .quote-box {
+        border-left: 3px solid var(--gold);
+      }
+
+      .quote-box .btn {
+        width: 100%;
+      }
+
+      .mobile-bottom-cta {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 40;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        padding: 8px;
+        background: rgba(7,7,6,.94);
+        border-top: 1px solid rgba(213,178,112,.28);
+        backdrop-filter: blur(14px);
+      }
+
+      .mobile-bottom-cta a {
+        min-height: 48px;
+        display: grid;
+        place-items: center;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 11px;
+        letter-spacing: .12em;
+        border: 1px solid rgba(255,255,255,.18);
+      }
+
+      .mobile-bottom-cta a:first-child {
+        background: linear-gradient(135deg, var(--gold), var(--gold-light));
+        color: #100d08;
+        border-color: transparent;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .brand img {
+        width: 118px;
+      }
+
+      .nav-actions .btn {
+        padding-inline: 8px;
+      }
+
+      .menu-btn {
+        padding-inline: 8px;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 11vw, 3rem);
+      }
+
+      .hero-art .worker {
+        width: 210px;
+      }
+
+      .hero-art .brush {
+        width: 270px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -673,7 +1066,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Finish That Stands Out</h2>
-          <p>Use this section for real job photos when available. For now, these images keep the site looking premium and give the customer a clear feel for the finish.</p>
+          <p>A clean, premium finish for modern homes, feature walls and exterior rendering projects.</p>
         </div>
 
         <div class="work-grid">
@@ -758,5 +1151,10 @@
       });
     });
   </script>
+  <div class="mobile-bottom-cta" aria-label="Quick contact actions">
+    <a href="#quote">Get Quote</a>
+    <a href="#quote">Contact</a>
+  </div>
+
 </body>
 </html>
