@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Premier Plastering & Rendering | Quality Finish. Built to Last.</title>
+  <meta name="description" content="Premier Plastering & Rendering provides professional skimming, rendering, dry lining, coving, media walls and renovation plastering services." />
+  <style>
+    :root {
+      --bg: #0b0b0a;
+      --bg-soft: #11100e;
+      --panel: #171512;
+      --panel-light: #f4efe5;
+      --text: #ffffff;
+      --muted: #cfc8bb;
+      --gold: #b08a46;
+      --gold-light: #d5b270;
+      --line: rgba(255,255,255,.14);
+      --shadow: 0 24px 80px rgba(0,0,0,.45);
+      --radius: 22px;
+      --max: 1180px;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(176,138,70,.22), transparent 34rem),
+        linear-gradient(180deg, rgba(0,0,0,.68), rgba(0,0,0,.82)),
+        url("Assets/raster/bg-dark-plaster-texture.jpg") center/cover fixed,
+        #0b0b0a;
+      line-height: 1.5;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(8,8,7,.84);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 220px;
+    }
+
+    .brand img {
+      width: 190px;
+      height: auto;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,.35));
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(14px, 2vw, 26px);
+      font-size: 12px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.82);
+    }
+
+    .navlinks a {
+      transition: color .2s ease;
+    }
+
+    .navlinks a:hover { color: var(--gold-light); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 12px 20px;
+      border-radius: 0;
+      border: 1px solid transparent;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: #100d08;
+      box-shadow: 0 12px 30px rgba(176,138,70,.22);
+    }
+    .btn-secondary {
+      border-color: rgba(255,255,255,.28);
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+    }
+    .btn-secondary:hover { border-color: var(--gold); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,.08) 45%, rgba(0,0,0,.62)),
+        radial-gradient(circle at 58% 44%, rgba(176,138,70,.16), transparent 28rem);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      min-height: calc(100vh - 82px);
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: center;
+      gap: 42px;
+      padding: 78px 0 54px;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 470px;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-art .brush {
+      position: absolute;
+      width: min(620px, 94%);
+      transform: rotate(-3deg) translateY(-16px);
+      opacity: .88;
+      filter: drop-shadow(0 18px 50px rgba(176,138,70,.18));
+    }
+
+    .hero-art .worker {
+      position: relative;
+      width: min(520px, 88%);
+      z-index: 2;
+      filter: drop-shadow(0 22px 40px rgba(0,0,0,.55));
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.2rem, 8vw, 7.8rem);
+      line-height: .88;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 950;
+    }
+
+    .hero-title span {
+      display: block;
+      color: var(--gold-light);
+      font-size: clamp(1.4rem, 3.2vw, 3.2rem);
+      letter-spacing: .28em;
+      margin-top: 18px;
+    }
+
+    .hero-copy {
+      max-width: 540px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .trust-strip {
+      background: #f7f2e8;
+      color: #111;
+      border-bottom: 1px solid rgba(0,0,0,.08);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .trust-card {
+      min-height: 136px;
+      padding: 28px 18px;
+      text-align: center;
+      border-left: 1px solid rgba(0,0,0,.1);
+    }
+
+    .trust-card:first-child { border-left: 0; }
+    .trust-card img {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 12px;
+      object-fit: contain;
+    }
+    .trust-card strong {
+      display: block;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      margin-bottom: 5px;
+    }
+    .trust-card p {
+      margin: 0;
+      color: #4d463b;
+      font-size: 13px;
+    }
+
+    section { padding: 86px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 4.2rem);
+      line-height: .98;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 520px;
+      color: var(--muted);
+    }
+
+    .services {
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.74), rgba(0,0,0,.86)),
+        url("Assets/raster/bg-dark-plaster-texture.jpg") center/cover;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      min-height: 230px;
+      padding: 30px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(213,178,112,.55);
+      background: rgba(176,138,70,.07);
+    }
+    .service-card img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      margin-bottom: 22px;
+    }
+    .service-card h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .showcase {
+      background: #f4efe5;
+      color: #111;
+    }
+    .showcase .section-head p { color: #5a5044; }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+    }
+    .work-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 360px;
+      background: #111;
+    }
+    .work-card.small { min-height: 171px; }
+    .work-stack {
+      display: grid;
+      gap: 18px;
+    }
+    .work-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+    .work-card:hover img { transform: scale(1.04); }
+    .work-label {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      padding: 13px 16px;
+      background: rgba(0,0,0,.72);
+      border-left: 3px solid var(--gold);
+      backdrop-filter: blur(8px);
+    }
+    .work-label strong {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 12px;
+      color: #fff;
+    }
+    .work-label span {
+      display: block;
+      color: var(--gold-light);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 44px;
+    }
+    .about-card {
+      background: rgba(255,255,255,.045);
+      border: 1px solid var(--line);
+      padding: 38px;
+      box-shadow: var(--shadow);
+    }
+    .about-card h2 {
+      margin: 0 0 18px;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .about-card p { color: var(--muted); margin: 0 0 18px; }
+    .ticks {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+    .ticks li {
+      position: relative;
+      padding-left: 28px;
+      color: var(--muted);
+    }
+    .ticks li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold-light);
+      font-weight: 900;
+    }
+    .feature-image {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .feature-image img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+    }
+
+    .stats {
+      background: linear-gradient(135deg, #0c0b09, #19150f);
+      border-block: 1px solid var(--line);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .stat {
+      padding: 34px 20px;
+      background: rgba(0,0,0,.35);
+      text-align: center;
+    }
+    .stat strong {
+      display: block;
+      color: var(--gold-light);
+      font-size: clamp(2rem, 4vw, 4.2rem);
+      line-height: 1;
+    }
+    .stat span {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: 12px;
+    }
+
+    .quote {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.90), rgba(0,0,0,.62)),
+        url("Assets/raster/bg-light-plaster-texture.jpg") center/cover;
+    }
+    .quote-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      padding: 48px;
+      background: rgba(0,0,0,.48);
+      border: 1px solid rgba(213,178,112,.24);
+      box-shadow: var(--shadow);
+    }
+    .quote-box h2 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 4.2rem);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .quote-box p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 700px;
+    }
+    .contact-lines {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--gold-light);
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 34px 0;
+      background: #070706;
+      border-top: 1px solid var(--line);
+      color: rgba(255,255,255,.64);
+      font-size: 13px;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 930px) {
+      .menu-btn { display: inline-flex; }
+      .navlinks {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: 82px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        background: rgba(8,8,7,.98);
+        border: 1px solid var(--line);
+        padding: 18px;
+      }
+      .navlinks.open { display: flex; }
+      .navlinks a { padding: 12px; border-bottom: 1px solid var(--line); }
+      .navlinks a:last-child { border-bottom: 0; }
+      .nav-actions .btn { display: none; }
+      .hero-grid, .split, .work-grid, .quote-box { grid-template-columns: 1fr; }
+      .hero-grid { min-height: auto; padding-top: 44px; }
+      .hero-content { order: -1; }
+      .hero-art { min-height: 360px; }
+      .trust-grid, .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-head { display: block; }
+      .section-head p { margin-top: 16px; }
+    }
+
+    @media (max-width: 600px) {
+      .brand img { width: 150px; }
+      .nav { height: 74px; }
+      .navlinks { top: 74px; }
+      .hero-title span { letter-spacing: .18em; }
+      .trust-grid, .stats-grid, .services-grid { grid-template-columns: 1fr; }
+      .trust-card { border-left: 0; border-top: 1px solid rgba(0,0,0,.1); }
+      .service-card, .about-card, .quote-box { padding: 26px; }
+      section { padding: 62px 0; }
+      .feature-image img { height: 360px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="Premier Plastering & Rendering home">
+        <img src="Assets/raster/logo-premier-plastering-rendering.svg" alt="Premier Plastering & Rendering logo" />
+      </a>
+
+      <nav class="navlinks" id="navlinks" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#quote">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#quote">Get a Quote</a>
+        <button class="menu-btn" type="button" aria-controls="navlinks" aria-expanded="false" id="menuBtn">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Hero section">
+      <div class="container hero-grid">
+        <div class="hero-art" aria-hidden="true">
+          <img class="brush" src="Assets/raster/gold-brush-stroke.png" alt="" />
+          <img class="worker" src="Assets/raster/hero-plasterer-illustration.png" alt="" />
+        </div>
+
+        <div class="hero-content">
+          <div class="eyebrow">Expert hands. Perfect finish.</div>
+          <h1 class="hero-title">Premier <span>Plastering & Rendering</span></h1>
+          <p class="hero-copy">
+            Professional plastering and rendering services for homes and businesses. Smooth finishes, clean workmanship and reliable service from start to finish.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#quote">Get a Quote</a>
+            <a class="btn btn-secondary" href="#services">Our Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip" aria-label="Trust points">
+      <div class="container trust-grid">
+        <div class="trust-card">
+          <img src="Assets/icons/svg/icon-experienced.svg" alt="" />
+          <strong>Experienced</strong>
+          <p>Skilled plastering and rendering workmanship.</p>
+        </div>
+        <div class="trust-card">
+          <img src="Assets/icons/svg/icon-quality-work.svg" alt="" />
+          <strong>Quality Work</strong>
+          <p>Attention to detail on every project.</p>
+        </div>
+        <div class="trust-card">
+          <img src="Assets/icons/svg/icon-reliable.svg" alt="" />
+          <strong>Reliable</strong>
+          <p>Clean, tidy and easy to work with.</p>
+        </div>
+        <div class="trust-card">
+          <img src="Assets/icons/svg/icon-fully-insured.svg" alt="" />
+          <strong>Fully Insured</strong>
+          <p>Peace of mind on every job.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Our Services</h2>
+          <p>From clean skim finishes to exterior rendering and full renovation work, Premier Plastering & Rendering delivers a professional finish built to last.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <img src="Assets/icons/svg/icon-skimming.svg" alt="" />
+            <h3>Skimming</h3>
+            <p>Smooth walls and ceilings ready for decorating, with a clean professional finish.</p>
+          </article>
+          <article class="service-card">
+            <img src="Assets/icons/svg/icon-rendering.svg" alt="" />
+            <h3>Rendering</h3>
+            <p>Durable exterior finishes that protect, refresh and improve kerb appeal.</p>
+          </article>
+          <article class="service-card">
+            <img src="Assets/icons/svg/icon-dry-lining.svg" alt="" />
+            <h3>Dry Lining</h3>
+            <p>Precise plasterboard installation for walls, ceilings and renovation projects.</p>
+          </article>
+          <article class="service-card">
+            <img src="Assets/icons/svg/icon-coving.svg" alt="" />
+            <h3>Coving</h3>
+            <p>Clean finishing details for ceiling lines, corners and feature rooms.</p>
+          </article>
+          <article class="service-card">
+            <img src="Assets/icons/svg/icon-media-walls.svg" alt="" />
+            <h3>Media Walls</h3>
+            <p>Modern feature walls, fireplace surrounds and smooth built-in finishes.</p>
+          </article>
+          <article class="service-card">
+            <img src="Assets/icons/svg/icon-renovations.svg" alt="" />
+            <h3>Renovations</h3>
+            <p>Complete plastering solutions for upgrades, repairs and full room transformations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase" id="work">
+      <div class="container">
+        <div class="section-head">
+          <h2>Finish That Stands Out</h2>
+          <p>Use this section for real job photos when available. For now, these images keep the site looking premium and give the customer a clear feel for the finish.</p>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card">
+            <img src="Assets/raster/media-wall-plastering.jpg" alt="Modern plastered media wall with fireplace" />
+            <div class="work-label"><strong>Media Walls</strong><span>Feature plastering and clean lines</span></div>
+          </article>
+          <div class="work-stack">
+            <article class="work-card small">
+              <img src="Assets/raster/interior-plaster-finish.jpg" alt="Smooth interior plaster finish" />
+              <div class="work-label"><strong>Interior Finish</strong><span>Smooth walls and warm lighting</span></div>
+            </article>
+            <article class="work-card small">
+              <img src="Assets/raster/exterior-rendering.jpg" alt="Modern exterior rendering finish" />
+              <div class="work-label"><strong>Rendering</strong><span>Clean exterior results</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container split">
+        <div class="about-card">
+          <div class="eyebrow">About Premier</div>
+          <h2>Reliable. Professional. Guaranteed.</h2>
+          <p>
+            Premier Plastering & Rendering focuses on high-quality work, clear communication and tidy finishes. Whether it is a single room, media wall, renovation or exterior rendering project, the aim is simple: expert hands, perfect finish.
+          </p>
+          <ul class="ticks">
+            <li>Domestic and light commercial plastering</li>
+            <li>Careful preparation and clean site practice</li>
+            <li>Free quotes and straightforward advice</li>
+            <li>Local, friendly and reliable service</li>
+          </ul>
+        </div>
+        <div class="feature-image">
+          <img src="Assets/raster/interior-plaster-finish.jpg" alt="Premium smooth plastered interior" />
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Business highlights">
+      <div class="container stats-grid">
+        <div class="stat"><strong>10+</strong><span>Years Experience</span></div>
+        <div class="stat"><strong>500+</strong><span>Projects Completed</span></div>
+        <div class="stat"><strong>100%</strong><span>Quality Focused</span></div>
+        <div class="stat"><strong>Free</strong><span>Quotes Available</span></div>
+      </div>
+    </section>
+
+    <section class="quote" id="quote">
+      <div class="container quote-box">
+        <div>
+          <div class="eyebrow">Get in touch</div>
+          <h2>Ready for a clean finish?</h2>
+          <p>Call, text or email to arrange a free quote. Send a few photos of the room or exterior area and we can help work out the next step.</p>
+          <div class="contact-lines">
+            <span>Phone: [PHONE NUMBER]</span>
+            <span>Email: [EMAIL ADDRESS]</span>
+          </div>
+        </div>
+        <a class="btn btn-primary" href="mailto:[EMAIL ADDRESS]">Request Quote</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <span>© <span id="year"></span> Premier Plastering & Rendering. All rights reserved.</span>
+      <span>Professional plastering, rendering, dry lining, coving and media walls.</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navlinks = document.getElementById('navlinks');
+    const year = document.getElementById('year');
+
+    year.textContent = new Date().getFullYear();
+
+    menuBtn.addEventListener('click', () => {
+      const open = navlinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    navlinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navlinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
